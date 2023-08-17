@@ -1,1 +1,209 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+local Window = OrionLib:MakeWindow({Name = "Easy GUI", HidePremium = false, SaveConfig = true, ConfigFolder = "Easy GUI"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+local OtherTab = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+  })
+
+local Section = OtherTab:AddSection({
+	Name = "Other Things"
+})
+
+local ToolsTab = Window:MakeTab({
+	Name = "Tools",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+  })
+
+local Section = ToolsTab:AddSection({
+	Name = "Useful tools for mobile players"
+})
+
+local DaHoodTab = Window:MakeTab({
+	Name = "Da Hood",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = DaHoodTab:AddSection({
+	Name = "Scripts for da hood"
+})
+
+OrionLib:MakeNotification({
+	Name = "Easy GUI",
+	Content = "Easy GUI has loaded",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+  })
+
+local Section = MiscTab:AddSection({
+	Name = "Random things for da hood"
+})
+
+Tab:AddButton({
+	Name = "Speed",
+	Callback = function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Jump power",
+	Callback = function()
+game:GetService('Players').LocalPlayer.Character.Humanoid.JumpPower = 150
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fly",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Rest WS/JP",
+	Callback = function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
+
+game:GetService('Players').LocalPlayer.Character.Humanoid.JumpPower = 150
+  	end    
+})
+
+OtherTab:AddButton({
+	Name = "Vape v4",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+
+ToolsTab:AddButton({
+	Name = "Keyboard",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  	end    
+})
+
+ToolsTab:AddButton({
+	Name = "Q-Tool",
+	Callback = function()
+getgenv().keytoclick = "Q"
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = keytoclick
+tool.Activated:connect(function()
+    local vim = game:service("VirtualInputManager")
+vim:SendKeyEvent(true, keytoclick, false, game)
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+wait(0.2)
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "A tool";
+Title = "Q-Tool";
+Duration = 10;
+});
+
+    end
+})
+
+DaHoodTab:AddButton({
+	Name = "Nukermode",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
+  	end    
+})
+
+DaHoodTab:AddButton({
+	Name = "Pluto",
+	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Scrvpter/Pluto/Lua/Loader.Lua', true))();
+  	end    
+})
+
+DaHoodTab:AddButton({
+	Name = "Swagmode",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002"))()
+  	end    
+})
+
+DaHoodTab:AddButton({
+	Name = "Faded",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/Faded/main/YesEpic", true))()
+  	end    
+})
+
+DaHoodTab:AddButton({
+	Name = "Rayx",
+	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+  	end
+})
+
+MiscTab:AddButton({
+	Name = "Macro",
+	Callback = function()
+getgenv()["Key To Macro Speed"] = "Z"
+getgenv()["Key To Macro Abuse"] = "X"
+getgenv()["God Speed"] = "God Speed"
+getgenv()["Auto Crouch"] = true -- Switch to true if you want it look more real
+ 
+loadstring(game:HttpGet("https://pastebin.com/raw/ZzgE78a0"))()
+ 
+local keybind = "c"
+ 
+--The Script
+ 
+yes = false
+    plr = game.Players.LocalPlayer
+    mouse = plr:GetMouse()
+    mouse.KeyDown:connect(function(key)
+        if key == keybind and yes == false then
+            yes = true
+            game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
+            game.Players.LocalPlayer.Character.Humz.WalkSpeed = 270
+            game.Players.LocalPlayer.Character.Humz.JumpPower = 40
+        elseif key == keybind and yes == true then
+            yes = false
+            game.Players.LocalPlayer.Character.Humz.WalkSpeed = 20
+            game.Players.LocalPlayer.Character.Humz.JumpPower = 50
+            game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"
+        end
+    end)
+
+  	end
+})
+
+MiscTab:AddParagraph("X and Z tool needed","")
+
+Tab:AddButton({
+	Name = "Rtx",
+	Callback = function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/uqD7VqQU')))()
+  	end    
+})
+
+OrionLib:Init()
