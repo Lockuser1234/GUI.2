@@ -66,4 +66,12 @@ gmt.__namecall = newcclosure(function(self, ...)
         return self.FireServer(self, unpack(Args))
     end
     return oldNamecall(self, ...)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+Notify({
+Description = "Made by q105";
+Title = "Soft Aim";
+Duration = 10;
+
 end)
